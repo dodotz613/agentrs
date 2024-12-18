@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ARC - AI Rig Complex">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+    
+    <title>Agent RS - by ARC</title>
+
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon - Add your favicon here -->
+    <link rel="icon" type="image/png" href="assets/images/agent_rs.png">
+
+    <!-- Add script here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</head>
+<body>
+    
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col relative">
+        <!-- Navigation Header -->
+        <header class="fixed top-0 w-full z-50 bg-white-blur shadow-sm">
+            <nav class="container">
+                <!-- Logo and Home Link -->
+                <a href="index.html" class="logo-link">
+                    <img src="assets/images/agent_rs.png" alt="ARC Logo" width="32" height="32">
+                    <span class="logo-text">Agent RS</span>
+                </a>
+
+                <!-- Navigation Icons -->
+                <div class="nav-links">
+                    <!-- Manifesto Link -->
+                    <a href="manifesto.html" aria-label="ARC Manifesto">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </a>
+                    <!-- Twitter Link -->
+                    <a href="https://x.com/arcdotfun" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                        </svg>
+                    </a>
+                  <!-- Screener Link -->
+                    <a href="https://dexscreener.com/solana/j3b6dvhes2y1cbmtvz5tcwxnegsjjdbukxduvdpoqms7" target="_blank" rel="noopener noreferrer" aria-label="Dexscreener">
+                        <img src="assets/images/dexscreener.png" alt="Dexscreener" class="icon" width="20" height="20">
+                    </a>
+                    
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col justify-center items-center pt-16 pb-16">
+            <!-- Animated Background -->
+            <div class="background-decoration">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+
+            <!-- Content Container -->
+            <div class="main-content">
+
+                <!-- Github Link -->
+                <a href="https://github.com/0xPlaygrounds/rig/blob/main/rig-core/examples/agent.rs" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg class="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+
+                <!-- Main Text -->
+                <h1 class="main-title fade-in">Agent RS by ARC</h1>
+                <p class="main-subtitle fade-in">Agent RS is a comedian here to entertain the user using humour and jokes.</p>
+
+                <!-- Badge -->
+                <div class="badge fade-in">
+                    <span>CA: 61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump</span>
+                </div>
+
+                <!-- Snippet -->
+                <div class="code-window">
+                    <div class="code-window-header">
+                      <div class="window-controls">
+                        <span class="window-control red"></span>
+                        <span class="window-control yellow"></span>
+                        <span class="window-control green"></span>
+                      </div>
+                      <div class="code-filename">agent.rs</div>
+                    </div>
+                    <div class="code-window-body">
+                      <pre><code class="rust hljs">
+                  use std::env;
+                  
+                  use rig::{completion::Prompt, providers};
+                  
+                  #[tokio::main]
+                  async fn main() -> Result<(), anyhow::Error> {
+                      // Create OpenAI client
+                      let client = providers::openai::Client::new(
+                          &env::var("OPENAI_API_KEY").expect("OPENAI_API_KEY not set"),
+                      );
+                  
+                      // Create agent with a single context prompt
+                      let comedian_agent = client
+                          .agent("gpt-4o")
+                          .preamble("You are a comedian here to entertain the user using humour and jokes.")
+                          .build();
+                  
+                      // Prompt the agent and print the response
+                      let response = comedian_agent.prompt("Entertain me!").await?;
+                      println!("{}", response);
+                  
+                      Ok(())
+                  }
+                      </code></pre>
+                    </div>
+                  </div>
+                  <button id="demo-button" class="demo-button">Run Demo</button>
+                    <div id="demo-output" class="demo-output"></div>
+                                                                  
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

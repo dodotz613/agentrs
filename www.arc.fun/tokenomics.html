@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Tokenomics - AI Rig Complex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/images/arc_logo.png">
+    <!-- Chart.js for pie chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col relative">
+        <!-- Navigation Header -->
+        <header class="fixed top-0 w-full z-50 bg-white-blur shadow-sm">
+            <nav class="container">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/images/arc_logo.png" alt="ARC Logo" width="32" height="32">
+                    <span class="logo-text">arc</span>
+                </a>
+                <div class="nav-links">
+                    <a href="manifesto.html" aria-label="ARC Manifesto">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </a>
+                    <a href="tokenomics.html" aria-label="ARC Tokenomics" class="active">
+                        <img src="assets/images/tokenomics_icon.png" alt="Tokenomics" class="icon" width="20" height="20">
+                    </a>
+                    <a href="https://x.com/arcdotfun" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/+CI-vivonuApiZWQ0" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                        <img src="assets/images/telegram_icon.png" alt="Telegram" class="icon" width="20" height="20">
+                    </a>
+                    <a href="https://dexscreener.com/solana/j3b6dvhes2y1cbmtvz5tcwxnegsjjdbukxduvdpoqms7" target="_blank" rel="noopener noreferrer" aria-label="Dexscreener">
+                        <img src="assets/images/dexscreener.png" alt="Dexscreener" class="icon" width="20" height="20">
+                    </a>
+                    <a href="https://github.com/0xPlaygrounds/rig" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-grow flex flex-col items-center justify-start relative overflow-hidden pt-20 pb-12">
+            <div class="background-decoration">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+
+            <div class="tokenomics-content fade-in">
+                <h1 class="tokenomics-title">arc token distribution</h1>
+                
+                <div class="tokenomics-grid">
+                    <!-- Left side - Pie Chart -->
+                    <div class="chart-container">
+                        <canvas id="tokenDistributionChart"></canvas>
+                    </div>
+
+                    <!-- Right side - Details -->
+                    <div class="tokenomics-text">
+                        <h2 class="section-title">token allocation breakdown</h2>
+                        
+                        <div class="allocation-item">
+                            <h3>circulating supply (90%)</h3>
+                            <p>fairly launched and available to the world. this ensures wide distribution and community ownership from day one.</p>
+                        </div>
+
+                        <div class="allocation-item">
+                            <h3>arc prize pool & treasury (5.5%)</h3>
+                            <p>prize pool for participants and winners of the arc experiments. this allocation incentivizes active participation and rewards those who contribute to the ecosystem's growth.</p>
+                        </div>
+
+                        <div class="allocation-item">
+                            <h3>team (4.5%)</h3>
+                            <p>development of the rig framework, arc ecosystem, and community. this allocation ensures continued development and improvement of the platform.</p>
+                        </div>
+
+                        <div class="vesting-note">
+                            <p class="emphasis">team allocations are locked in escrow and vested over 1 year to ensure long-term alignment and prevent market disruption. the prize pool will be released at the end of each arc experiment</p>
+                        </div>
+
+                        <div class="escrow-section">
+                            <h3 class="escrow-title">team escrow account</h3>
+                            <div class="escrow-grid">
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 1</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">Ap5X6HmtL4fcy2zCcAVhmhRZhrhKJjDagmkQZURUWGqV</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 2</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">E38PbYFWsMV6csnSSDkfz3YVgxHka5BZhv9b1mqFHDoX</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 3</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">DWMZSspWKYa1gZzhr8KQVtKBrzU778vhYuMCo59nCC7Z</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 4</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">8baRPufxZrZYq4wwkTsBkpTyz17w6JgbpPrzHWfqqrqL</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 5</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">7ziUixTvfbhum67VcaqxDH88PbvxNiSpgsxRFoKfm3EA</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 6</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">5o7tdWMcHaruJZNcKxZeqnaXytN86D5qsTH4d1hZgmZx</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 7</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">EVfLDLqWGkPzGQbGtxYZmLdE2auN7DtuzRuifaRhvB3k</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 8</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">9td9nntEdY5uWy7mzcqMQkWAHszajunV6zKWan1QtQyA</code>
+                                </div>
+                                <div class="escrow-item">
+                                    <span class="escrow-label">escrow account 9</span>
+                                    <code class="escrow-address" onclick="navigator.clipboard.writeText(this.textContent)">6kqHBNdyRJ9QzJX8eBZcEQWRLpwky2bZkyPfZTqa2yoL</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Initialize pie chart
+        const ctx = document.getElementById('tokenDistributionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Circulating Supply', 'Arc Prize Pool', 'Team'],
+                datasets: [{
+                    data: [90, 5.5, 4.5],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(255, 206, 86, 0.8)',
+                        'rgba(255, 99, 132, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                family: 'Lora'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
