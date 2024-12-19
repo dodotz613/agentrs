@@ -91,10 +91,24 @@ document.getElementById("demo-button").addEventListener("click", function() {
     const demoResponses = [
         "GPT-4o: Here's a joke: Why don't skeletons fight each other? They don't have the guts!",
         "GPT-4o: Here's a joke: What do you call fake spaghetti? An impasta!",
-        "GPT-4o: Here's a joke: Why don’t programmers like nature? It has too many bugs.",
+        "GPT-4o: Here's a joke: Why dont programmers like nature? It has too many bugs.",
         "GPT-4o: Here's a joke: How do you comfort a JavaScript bug? You console it!",
         "GPT-4o: Here's a joke: Why was the computer cold? Because it left its Windows open!",
-        "GPT-4o: Here's a joke: Why do Java developers wear glasses? Because they can’t C#!"
+        "GPT-4o: Here's a joke: Why do Java developers wear glasses? Because they cant C#!",
+        "GPT-4o: Here's a joke: Why do bees have sticky hair? Because they use honeycombs!",
+        "GPT-4o: Here's a joke: Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "GPT-4o: Here's a joke: Why did the coffee file a police report? It got mugged!",
+        "GPT-4o: Here's a joke: How does the ocean say hi? It waves!",
+        "GPT-4o: Here's a joke: Why don’t oysters share their pearls? Because they’re shellfish!",
+        "GPT-4o: Here's a joke: Why was the math book sad? It had too many problems.",
+        "GPT-4o: Here's a joke: Why did the bicycle fall over? It was two tired!",
+        "GPT-4o: Here's a joke: Why can’t your nose be 12 inches long? Because then it would be a foot!",
+        "GPT-4o: Here's a joke: What do you call cheese that isn’t yours? Nacho cheese!",
+        "GPT-4o: Here's a joke: Why can’t you trust an atom? Because they make up everything!",
+        "GPT-4o: Here's a joke: What do you call a bear with no teeth? A gummy bear!",
+        "GPT-4o: Here's a joke: Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+        "GPT-4o: Here's a joke: What do you call a boomerang that doesn’t come back? A stick!",
+        "GPT-4o: Here's a joke: Why don’t skeletons go to parties? They have no body to go with!"
     ];
 
     // Select a random sentence from the array
